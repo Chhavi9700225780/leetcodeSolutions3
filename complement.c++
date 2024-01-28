@@ -11,6 +11,7 @@ public:
           m= m >> 1;
         }
         int a = n ^ mask;
+        
         return a;
     }
 };
