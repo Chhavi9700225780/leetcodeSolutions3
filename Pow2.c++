@@ -17,3 +17,11 @@ if(n==0){
 
 }
 return floor(log( 2*(n))) == ceil(log(2*n)) ? True :False ;
+
+
+while(n>1 && n&1==0){
+   n = n>>1;
+}
+if(n==1){
+    return true;
+}
