@@ -1,0 +1,47 @@
+bool ispossible(vector<int> &boards, int n, int k, int mid){
+int painterCount=1;
+int boards_sum = 0;
+  for(int i=0; i<n; i++)
+{
+    if(boards_sum+boards[i] <=mid){
+      boards_sum+=boards[i];
+    }
+    else{
+        studentCount++;
+        if(studentCount>k || boards[i]>mid ){
+            return false;
+            
+        }
+        boards_sum = boards[i];
+    }
+}
+return true;
+}
+int findLargestMinDistance(vector<int> &boards, int k)
+{
+    int n = boards.size();
+    // Write your code here.
+    if(n<k){
+        return -1;
+    }
+    int s=0;
+    int sum =0;
+    for(int i=0; i<n; i++){
+        sum+= boards[i];
+    }
+    int e=sum;
+    int ans = -1;
+    int mid = s+(e-s)/2;
+    while(s<=e){
+        if(ispossible(boards, n, k, mid)){
+            ans =mid;
+            e= mid -1;
+        }
+        else{
+            s=mid+1;
+        }
+        mid = s+(e-s)/2;
+    }
+    return ans;
+
+}
