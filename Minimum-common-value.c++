@@ -14,3 +14,4 @@ public:
       return -1;
     }
 };
+//we can do this by two pointer approach
