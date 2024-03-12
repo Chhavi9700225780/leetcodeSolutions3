@@ -23,3 +23,28 @@ public:
   return st.empty();
     }
 };
+class Solution {
+public:
+    bool isValid(string s) {
+         std::stack<char> stack;
+    for (char c: s) {
+        if (c == '(') { // openning brackets
+            stack.push(')'); // push the paired bracket
+        } else if (c == '[') {
+            stack.push(']');
+        } else if (c == '{') {
+            stack.push('}');
+        }else { // close brackets
+            if (stack.empty()){ //if stack is empty, it means there is only left bracket
+                return false;
+            }
+            if (stack.top()==c){ // paired bracket
+                stack.pop();
+                   }else{
+                return false;
+            }
+        }
+    }
+    return stack.empty();
+    }
+};
