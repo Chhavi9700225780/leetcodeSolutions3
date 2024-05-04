@@ -37,4 +37,10 @@ int getpivot(vector<int> &arr, int n) {
  int search(vector<int> &arr, int n, int k) {
     int pivot = getpivot(arr, n);
     if(k>=arr[pivot]&& k<=arr[n-1]){
-        return binary(arr, pivot , n-1, k);}}
+        return binary(arr, pivot , n-1, k);}
+          else{
+        return binary(arr, 0 , pivot, k);
+        }
+        }
+        
+        
