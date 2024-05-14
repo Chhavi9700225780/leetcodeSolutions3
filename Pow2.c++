@@ -25,3 +25,10 @@ while(n>1 && n&1==0){
 if(n==1){
     return true;
 }
+
+if (n <= 0){
+            return false;
+        // Check if there is only one bit set in n's binary representation
+        return (n & (n - 1)) == 0;
+        
+    }
