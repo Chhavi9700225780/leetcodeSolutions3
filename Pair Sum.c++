@@ -16,3 +16,19 @@ vector<vector<int>> pairSum(vector<int> &arr, int s){
    sort(ans.begin() , ans.end());
    return ans;
 }
+
+//===============Geeks of Geeks==============
+  
+  // Your code goes here  
+        vector<pair<int,int>> ans;
+   for(int i=0; i<N; i++){
+      for(int j=0; j<M; j++){
+         if(A[i]+B[j]==X){
+        
+          ans.push_back({A[i],B[j]});
+
+         }
+      }
+   }
+   sort(ans.begin() , ans.end());
+   return ans;
